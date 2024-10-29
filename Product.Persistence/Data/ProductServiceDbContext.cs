@@ -8,12 +8,8 @@ using System.Threading.Tasks;
 
 namespace Product.Persistence.Data
 {
-    public class ProductServiceDbContext : DbContext
+    public class ProductServiceDbContext(DbContextOptions options) : DbContext(options)
     {
-        public ProductServiceDbContext(DbContextOptions options) : base(options)
-        {
-        }
-
         public DbSet<ProductItem> ProductItems { get; set; }
     }
 }
